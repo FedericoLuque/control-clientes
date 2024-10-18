@@ -1,6 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AlertMessagesModule } from 'jjwins-angular-alert-messages'
+import { AlertMessagesModule } from 'jjwins-angular-alert-messages';
+import { environment } from '../environments/environment';
+import { FormsModule } from '@angular/forms';
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,7 +37,12 @@ import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AlertMessagesModule
+    AlertMessagesModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firestore), // Inicializa AngularFire
+    AngularFirestoreModule, // Proveedor de Firestore
+    AngularFireAuthModule,  // Proveedor de Auth
+    AngularFireStorageModule // Proveedor de Storage
   ],
   providers: [],
   bootstrap: [AppComponent]
