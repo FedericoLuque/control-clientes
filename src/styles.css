@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+.alerts-error {
+    background-color: #f44336; /* Rojo */
+    color: white; /* Texto en blanco */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #d32f2f; /* Borde rojo oscuro */
+    }
+    .alerts-success {
+    background-color: #38bd6f; /* Rojo */
+    color: white; /* Texto en blanco */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #38ae17; /* Borde rojo oscuro */
+    }
+    

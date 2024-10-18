@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AlertMessagesModule } from 'jjwins-angular-alert-messages'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,7 +29,8 @@ import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AlertMessagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
