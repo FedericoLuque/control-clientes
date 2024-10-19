@@ -1,1 +1,45 @@
-<p>clientes works!</p>
+<!-- Botones -->
+
+<section id="actions" class="py-4 mb-4 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <a href="#" class="btn btn-primary btn-block" data-toggle="modal" data-target="#agregarClienteModal">
+                    <i class="fas fa-plus"></i> Agregar Cliente
+            </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Listado Clientes -->
+
+<section id="clientes">
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Listado de Clientes</h4>
+                </div>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Saldo</th>
+                        </tr>
+                    </thead>
+                        <tbody>
+                            <tr *ngFor="let cliente of clientes; let i = index">
+                                <td>{{i+1}}</td>
+                                <td>{{cliente.nombre}} {{cliente.apellido}}</td>
+                                <td>{{cliente.saldo | currency: 'EUR' : '€'}}</td>
+                            </tr>
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</section>

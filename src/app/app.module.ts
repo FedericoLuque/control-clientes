@@ -20,6 +20,7 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { ConfiguracionComponent } from './componentes/configuracion/configuracion.component';
 import { NoEncontradoComponent } from './componentes/no-encontrado/no-encontrado.component';
 import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.component';
+import { ClienteServicio } from './servicios/cliente.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.componen
     AngularFireAuthModule,  // Proveedor de Auth
     AngularFireStorageModule // Proveedor de Storage
   ],
-  providers: [],
+  providers: [ClienteServicio],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
