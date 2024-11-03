@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Cliente } from '../modelo/cliente.model';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import {
   AngularFirestore,
   AngularFirestoreCollection,
@@ -23,7 +24,23 @@ export class ClienteServicio {
     return this.clientes;
   }
 
-  agregarCliente(cliente: Cliente){
+  agregarCliente(cliente: Cliente) {
     this.clientesColeccion.add(cliente);
+  }
+
+  getCliente(id: string): Observable<Cliente | null> {
+    return this.firestore
+      .doc<Cliente>(`clientes/${id}`)
+      .valueChanges({ idField: 'id' })
+      .pipe(map((cliente) => (cliente ? cliente : null)));
+  }
+
+  modificarCliente(cliente: Cliente) {
+    const clienteDoc = this.firestore.doc<Cliente>(`clientes/${cliente.id}`);
+    return clienteDoc.update(cliente);
+  }
+  eliminarCliente(cliente: Cliente) {
+    const clienteDoc = this.firestore.doc<Cliente>(`clientes/${cliente.id}`);
+    return clienteDoc.delete();
   }
 }
