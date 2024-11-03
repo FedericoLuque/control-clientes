@@ -22,4 +22,8 @@ export class ClienteServicio {
   getClientes(): Observable<Cliente[]> {
     return this.clientes;
   }
+
+  agregarCliente(cliente: Cliente){
+    this.clientesColeccion.add(cliente);
+  }
 }
