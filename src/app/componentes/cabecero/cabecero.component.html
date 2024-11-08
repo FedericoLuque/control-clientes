@@ -33,8 +33,14 @@
           </div>
         </li>
         <li *ngIf="!isLoggedIn" class="nav-item">
-          <a routerLink="/login" class="nav-link">
+          <a routerLink="/login" class="nav-link" routerLinkActive="router-link-active">
             <i class="fas fa-user"></i> Login
+          </a>
+        </li>
+
+        <li *ngIf="!isLoggedIn" class="nav-item">
+          <a routerLink="/registrarse" class="nav-link" routerLinkActive="router-link-active">
+            <i class="fas fa-user"></i> Registro
           </a>
         </li>
 
