@@ -23,6 +23,7 @@ import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.componen
 import { ClienteServicio } from './servicios/cliente.service';
 import { LoginService } from './servicios/login.service';
 import { AuthGuard } from './guardianes/auth.guard';
+import { ConfiguracionServicio } from './servicios/configuracion.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { AuthGuard } from './guardianes/auth.guard';
     RegistroComponent,
     ConfiguracionComponent,
     NoEncontradoComponent,
-    PiePaginaComponent
+    PiePaginaComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,10 +45,14 @@ import { AuthGuard } from './guardianes/auth.guard';
     FormsModule,
     AngularFireModule.initializeApp(environment.firestore), // Inicializa AngularFire
     AngularFirestoreModule, // Proveedor de Firestore
-    AngularFireAuthModule,  // Proveedor de Auth
-    AngularFireStorageModule // Proveedor de Storage
+    AngularFireAuthModule, // Proveedor de Auth
+    AngularFireStorageModule, // Proveedor de Storage
   ],
-  providers: [ClienteServicio, LoginService, AuthGuard],
-  bootstrap: [AppComponent]
+  providers: [ClienteServicio, 
+              LoginService, 
+              AuthGuard, 
+              ConfiguracionServicio,
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
